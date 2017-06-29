@@ -1,17 +1,17 @@
 //
-//  BaseVc.swift
-//  RouterDemo
+//  ErrorVc.swift
+//  Router-modular-demo
 //
-//  Created by baiqiang on 2017/6/11.
+//  Created by baiqiang on 2017/6/10.
 //  Copyright © 2017年 baiqiang. All rights reserved.
 //
 
 import UIKit
 
-class BaseVc: UIViewController {
+class ErrorVc: BaseVc {
 
     //MARK: - ***** Ivars *****
-    open var params:Dictionary<String, Any>?
+    private var label:UILabel!
     //MARK: - ***** Class Method *****
     
     //MARK: - ***** initialize Method *****
@@ -23,21 +23,19 @@ class BaseVc: UIViewController {
         self.initUI()
         self.registerNotify()
     }
-    deinit {
-        print("\(self) is destroy")
-        NotificationCenter.default.removeObserver(self)
-    }
+    
     //MARK: - ***** public Method *****
-   
+
     //MARK: - ***** private Method *****
     private func initData() {
+        self.navigationItem.title = "错误界面"
         self.view.backgroundColor = UIColor.white
     }
     private func initUI() {
-        
-        if self.navigationController?.viewControllers.index(of: self) != 0 {
-            self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "back", style: .plain, target: self, action: #selector(leftbackItemAction))
-        }
+        let label = UILabel(frame: CGRect(x: 100, y: 100, width: 200, height: 30))
+        label.text = "无法找到该界面!"
+        self.view.addSubview(label)
+        self.label = label
     }
     private func registerNotify() {
         
@@ -45,9 +43,7 @@ class BaseVc: UIViewController {
     //MARK: - ***** LoadData Method *****
     
     //MARK: - ***** respond event Method *****
-    @objc private func leftbackItemAction() {
-        self.navigationController?.popViewController(animated: true)
-    }
+    
     //MARK: - ***** Protocol *****
     
     //MARK: - ***** create Method *****

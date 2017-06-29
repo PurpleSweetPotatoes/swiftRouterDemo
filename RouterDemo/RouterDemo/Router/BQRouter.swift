@@ -8,12 +8,8 @@
 
 import UIKit
 
-extension UIViewController {
-    func loadVcInfo(params:Dictionary<String,Any>) {}
-}
-
 struct BQRouter {
-    static func loadVc(vcName:String, spaceName: String? = nil) -> UIViewController {
+    static func loadVc<T: BaseVc>(vcName:String, spaceName: String? = nil) -> T where T:BQRouterCommProtocol {
         var clsName = ""
         if let space = spaceName{
             clsName = space + "." + vcName
@@ -21,12 +17,12 @@ struct BQRouter {
             let spaceName = Bundle.main.infoDictionary!["CFBundleExecutable"] as? String
             clsName = spaceName! + "." + vcName
         }
-        let cls = NSClassFromString(clsName) as? UIViewController.Type
+        let cls = NSClassFromString(clsName) as? BaseVc.Type
         let vc = cls?.init()
         if let valueVc = vc {
-            return valueVc
+            return valueVc as! T
         }else {
-            return ErrorVc() 
+            return ErrorVc() as! T
         }
     }
 }

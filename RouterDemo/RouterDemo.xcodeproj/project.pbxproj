@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04604FB81F048802004B3FE9 /* BQRouterComm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04604FB71F048801004B3FE9 /* BQRouterComm.swift */; };
 		E21F95171EED5CF0003E4D69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F95161EED5CF0003E4D69 /* AppDelegate.swift */; };
 		E21F95191EED5CF0003E4D69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F95181EED5CF0003E4D69 /* ViewController.swift */; };
 		E21F951C1EED5CF0003E4D69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E21F951A1EED5CF0003E4D69 /* Main.storyboard */; };
@@ -14,14 +15,13 @@
 		E21F95211EED5CF0003E4D69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E21F951F1EED5CF0003E4D69 /* LaunchScreen.storyboard */; };
 		E21F952D1EED5D3E003E4D69 /* BQRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F95291EED5D3E003E4D69 /* BQRouter.swift */; };
 		E21F952E1EED5D3E003E4D69 /* ErrorVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F952A1EED5D3E003E4D69 /* ErrorVc.swift */; };
-		E21F95301EED5D3E003E4D69 /* NotificationName+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F952C1EED5D3E003E4D69 /* NotificationName+extension.swift */; };
-		E21F95321EED5D47003E4D69 /* vcNameInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = E21F95311EED5D47003E4D69 /* vcNameInfo.plist */; };
 		E21F95341EED5DFB003E4D69 /* SecondVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F95331EED5DFB003E4D69 /* SecondVc.swift */; };
 		E21F95361EED5E04003E4D69 /* ThreeVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F95351EED5E04003E4D69 /* ThreeVc.swift */; };
 		E21F95381EED5E37003E4D69 /* BaseVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F95371EED5E37003E4D69 /* BaseVc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04604FB71F048801004B3FE9 /* BQRouterComm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BQRouterComm.swift; sourceTree = "<group>"; };
 		E21F95131EED5CF0003E4D69 /* RouterDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouterDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E21F95161EED5CF0003E4D69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E21F95181EED5CF0003E4D69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,8 +31,6 @@
 		E21F95221EED5CF0003E4D69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E21F95291EED5D3E003E4D69 /* BQRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BQRouter.swift; sourceTree = "<group>"; };
 		E21F952A1EED5D3E003E4D69 /* ErrorVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorVc.swift; sourceTree = "<group>"; };
-		E21F952C1EED5D3E003E4D69 /* NotificationName+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificationName+extension.swift"; sourceTree = "<group>"; };
-		E21F95311EED5D47003E4D69 /* vcNameInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = vcNameInfo.plist; sourceTree = "<group>"; };
 		E21F95331EED5DFB003E4D69 /* SecondVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondVc.swift; sourceTree = "<group>"; };
 		E21F95351EED5E04003E4D69 /* ThreeVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeVc.swift; sourceTree = "<group>"; };
 		E21F95371EED5E37003E4D69 /* BaseVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVc.swift; sourceTree = "<group>"; };
@@ -52,8 +50,8 @@
 		E21F950A1EED5CF0003E4D69 = {
 			isa = PBXGroup;
 			children = (
-				E21F95151EED5CF0003E4D69 /* RouterDemo */,
 				E21F95141EED5CF0003E4D69 /* Products */,
+				E21F95151EED5CF0003E4D69 /* RouterDemo */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,15 +66,15 @@
 		E21F95151EED5CF0003E4D69 /* RouterDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E21F95281EED5D2A003E4D69 /* Router */,
 				E21F95161EED5CF0003E4D69 /* AppDelegate.swift */,
-				E21F95181EED5CF0003E4D69 /* ViewController.swift */,
+				E21F951D1EED5CF0003E4D69 /* Assets.xcassets */,
+				E21F95221EED5CF0003E4D69 /* Info.plist */,
+				E21F951F1EED5CF0003E4D69 /* LaunchScreen.storyboard */,
+				E21F951A1EED5CF0003E4D69 /* Main.storyboard */,
 				E21F95331EED5DFB003E4D69 /* SecondVc.swift */,
 				E21F95351EED5E04003E4D69 /* ThreeVc.swift */,
-				E21F95281EED5D2A003E4D69 /* Router */,
-				E21F951A1EED5CF0003E4D69 /* Main.storyboard */,
-				E21F951D1EED5CF0003E4D69 /* Assets.xcassets */,
-				E21F951F1EED5CF0003E4D69 /* LaunchScreen.storyboard */,
-				E21F95221EED5CF0003E4D69 /* Info.plist */,
+				E21F95181EED5CF0003E4D69 /* ViewController.swift */,
 			);
 			path = RouterDemo;
 			sourceTree = "<group>";
@@ -84,13 +82,12 @@
 		E21F95281EED5D2A003E4D69 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				E21F95371EED5E37003E4D69 /* BaseVc.swift */,
-				E21F95311EED5D47003E4D69 /* vcNameInfo.plist */,
 				E21F95291EED5D3E003E4D69 /* BQRouter.swift */,
+				E21F95371EED5E37003E4D69 /* BaseVc.swift */,
 				E21F952A1EED5D3E003E4D69 /* ErrorVc.swift */,
-				E21F952C1EED5D3E003E4D69 /* NotificationName+extension.swift */,
+				04604FB71F048801004B3FE9 /* BQRouterComm.swift */,
 			);
-			name = Router;
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,7 +150,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E21F95321EED5D47003E4D69 /* vcNameInfo.plist in Resources */,
 				E21F95211EED5CF0003E4D69 /* LaunchScreen.storyboard in Resources */,
 				E21F951E1EED5CF0003E4D69 /* Assets.xcassets in Resources */,
 				E21F951C1EED5CF0003E4D69 /* Main.storyboard in Resources */,
@@ -168,9 +164,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E21F952D1EED5D3E003E4D69 /* BQRouter.swift in Sources */,
+				04604FB81F048802004B3FE9 /* BQRouterComm.swift in Sources */,
 				E21F95361EED5E04003E4D69 /* ThreeVc.swift in Sources */,
 				E21F95191EED5CF0003E4D69 /* ViewController.swift in Sources */,
-				E21F95301EED5D3E003E4D69 /* NotificationName+extension.swift in Sources */,
 				E21F95381EED5E37003E4D69 /* BaseVc.swift in Sources */,
 				E21F95341EED5DFB003E4D69 /* SecondVc.swift in Sources */,
 				E21F95171EED5CF0003E4D69 /* AppDelegate.swift in Sources */,
@@ -187,6 +183,7 @@
 				E21F951B1EED5CF0003E4D69 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		E21F951F1EED5CF0003E4D69 /* LaunchScreen.storyboard */ = {
@@ -195,6 +192,7 @@
 				E21F95201EED5CF0003E4D69 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

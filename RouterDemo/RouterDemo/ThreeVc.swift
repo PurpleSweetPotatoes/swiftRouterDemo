@@ -26,9 +26,13 @@ class ThreeVc: BaseVc {
     
     //MARK: - ***** public Method *****
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let vc = BQRouter.loadVc(vcName: "unkown")
+        let vc  = BQRouter.loadVc(vcName: "unkown")
         vc.loadVcInfo(params:["title":"sencond"])
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    override func loadVcInfo(params: Any) {
+        let para = params as? Dictionary<String, Any>
+        self.navigationItem.title = para?["title"] as? String
     }
     //MARK: - ***** private Method *****
     private func initData() {
@@ -60,15 +64,13 @@ class ThreeVc: BaseVc {
     
     //MARK: - ***** respond event Method *****
     @objc private func logInAction() {
-        NotificationCenter.default.post(name: .RLoginSucess, object: self.textField.text!)
+        BQRouterComm.postRouterComm(name: .RLoginSucess, params: self.textField.text!)
     }
     @objc private func logOutAction() {
-        NotificationCenter.default.post(name: .RLogout, object: self.textField.text!)
+        BQRouterComm.postRouterComm(name: .RLogout, params: self.textField.text!)
     }
     //MARK: - ***** Protocol *****
-    override func loadVcInfo(params: Dictionary<String, Any>) {
-        self.navigationItem.title = params["title"] as? String
-    }
+    
     //MARK: - ***** create Method *****
 
 }

@@ -30,6 +30,14 @@ class ViewController: BaseVc {
         vc.loadVcInfo(params:["title":"second"])
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    override func reciveRouterComm(name: Notification.Name, params: Any?) {
+        if name == .RLoginSucess {
+            print("\(self.classForCoder) 登录成功 回调 \(params ?? "无参数")")
+        }else if name == .RLogout {
+            print("\(self.classForCoder) 退出登录 回调 \(params ?? "无参数")")
+        }
+    }
     //MARK: - ***** private Method *****
     private func initData() {
         self.navigationItem.title = "first"
@@ -39,8 +47,7 @@ class ViewController: BaseVc {
         self.view.addSubview(self.label)
     }
     private func registerNotify() {
-        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess(notifi:)), name: .RLoginSucess, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess(notifi:)), name: .RLogout, object: nil)
+        BQRouterComm.addRouterComm(names: .RLoginSucess,.RLogout, target: self)
     }
     
     //MARK: - ***** LoadData Method *****
@@ -51,9 +58,7 @@ class ViewController: BaseVc {
         self.label.text = notifi.object as? String
     }
     //MARK: - ***** Protocol *****
-    override func loadVcInfo(params: Dictionary<String, Any>) {
-        self.navigationItem.title = params["title"] as? String
-    }
+
     //MARK: - ***** create Method *****
 
 }
